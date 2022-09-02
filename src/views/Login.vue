@@ -69,7 +69,7 @@ export default {
         password: this.password,
         // eslint-disable-next-line
       };
-      Firebase.auth()
+      firebase.auth()
         .signInWithEmailAndPassword(info.email, info.password)
         .then(
           () => {
@@ -78,8 +78,8 @@ export default {
           },
           (error) => {
             this.error = error.message;
-        },
-      );
+          }
+        );
     },
   },
 };

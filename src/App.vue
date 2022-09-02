@@ -54,7 +54,7 @@ export default {
 <style lang="scss">
 $primary: #5f2882;
 // eslint-disable-next-line prettier/prettier
-@import 'node_modules/bootstrap/scss/bootstrap';
+@import "node_modules/bootstrap/scss/bootstrap";
 </style>
 
 <!--

@@ -12,7 +12,9 @@
                     {{ error }}
                   </div>
                   <section class="col-sm-12 form-group">
-                    <label class="form-control-label sr-only" for="displayName">Display Name</label>
+                    <label class="form-control-label sr-only" for="displayName"
+                      >Display Name</label
+                    >
                     <input
                       class="form-control"
                       type="text"
@@ -25,7 +27,9 @@
                   </section>
                 </div>
                 <section class="form-group">
-                  <label class="form-control-label sr-only" for="email">Email</label>
+                  <label class="form-control-label sr-only" for="email"
+                    >Email</label
+                  >
                   <input
                     class="form-control"
                     type="email"
@@ -95,10 +99,8 @@ export default {
         displayName: this.displayName,
       };
       if (!this.error) {
-        Firebase.auth().createUserWithEmailAndPassword(
-          info.email,
-          info.password
-        );
+        firebase.auth()
+          .createUserWithEmailAndPassword(info.email, info.password);
         then(
           (userCredentials) => {
             return userCredentials.user.updateProfile({
