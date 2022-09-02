@@ -39,11 +39,11 @@
           </div>
         </div>
       </div>
+    </form>
     <p class="text-center mt-2">
       or
       <router-link to="/register">register</router-link>
     </p>
-    </form>
   </div>
 </template>
 

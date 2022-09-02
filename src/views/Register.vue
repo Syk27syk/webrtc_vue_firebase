@@ -87,5 +87,45 @@ export default {
       error: null,
     };
   },
+  methods: {
+    register: function () {
+      const info = {
+        email: this.email,
+        password: this.passTwo,
+        displayName: this.displayName,
+      };
+      if (!this.error) {
+        Firebase.auth().createUserWithEmailAndPassword(
+          info.email,
+          info.password
+        );
+        then(
+          (userCredentials) => {
+            return userCredentials.user.updateProfile({
+                displayName: info.displayName,
+              })
+              .then(() => {
+                // eslint-disable-next-line
+                this.$router.replace('/')
+              });
+          },
+          (error) => {
+            this.error = error.message;
+          }
+        );
+      }
+    },
+  },
+  watch: {
+    passTwo: function () {
+      // eslint-disable-next-line
+      if (this.passOne !=='' && this.passTwo !== '' && this.passTwo !== this.passOne) {
+        // eslint-disable-next-line
+        this.error = 'passwords must match'
+      } else {
+        this.error = null;
+      }
+    },
+  },
 };
 </script>
