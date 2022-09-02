@@ -96,7 +96,8 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  // eslint-disable-next-line prettier/prettier
+  name: 'HelloWorld',
   props: {
     msg: String,
   },

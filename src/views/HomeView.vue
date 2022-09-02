@@ -1,3 +1,4 @@
+<!-- eslint-disable quotes -->
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
@@ -7,9 +8,11 @@
 
 <script>
 // @ is an alias to /src
+// eslint-disable-next-line quotes
 import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
+  // eslint-disable-next-line quotes
   name: "HomeView",
   components: {
     HelloWorld,
