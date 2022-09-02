@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div id="app">
+    <Navigation />
     <!--
     <nav>
       <router-link to="/">Home</router-link> |
@@ -9,6 +10,16 @@
     <router-view />
   </div>
 </template>
+
+<script>
+// eslint-disable-next-line prettier/prettier
+import Navigation from '@/components/Navigation'
+export default {
+  comopnents: {
+    Navigation,
+  },
+};
+</script>
 
 <style lang="scss">
 $primary: #5f2882;
