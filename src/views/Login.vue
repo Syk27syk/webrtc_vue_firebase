@@ -39,38 +39,48 @@
           </div>
         </div>
       </div>
+    <p class="text-center mt-2">
+      or
+      <router-link to="/register">register</router-link>
+    </p>
     </form>
   </div>
 </template>
 
 <script>
+// eslint-disable-next-line
 import firebase from 'firebase/compat/app';
 
 export default {
-  data: function() {
+  data: function () {
     return {
       email: null,
       password: null,
+      // eslint-disable-next-line
       error: null,
-    },
+      // eslint-disable-next-line
+    };
   },
   methods: {
-    login: function() {
+    login: function () {
       const info = {
         email: this.email,
-        password: this.password
-      }
+        // eslint-disable-next-line
+        password: this.password,
+        // eslint-disable-next-line
+      };
       Firebase.auth()
-      .signInWithEmailAndPassword(info.email, info.password)
-      .then(
-        () => {
-          this.$router.push('/')
+        .signInWithEmailAndPassword(info.email, info.password)
+        .then(
+          () => {
+            // eslint-disable-next-line
+            this.$router.push("/");
+          },
+          (error) => {
+            this.error = error.message;
         },
-        error => {
-          this.error = error.message
-        }
-      )
-    }
-  }
+      );
+    },
+  },
 };
 </script>

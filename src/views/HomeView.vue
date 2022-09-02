@@ -18,7 +18,8 @@
               between multiple users, allowing you to create rooms for your meetings and invite
               attendees.
             </p>
-            <router-link class="btn btn-outline-primary mr-2" to="/login">Log In</router-link>
+            <router-link class="btn btn-outline-primary m-2" to="/login">Log In</router-link>
+            <router-link class="btn btn-outline-primary m-2" to="/register">Register</router-link>
           </div>
         </div>
       </div>
