@@ -16,8 +16,11 @@
 import Navigation from '@/components/Navigation'
 export default {
   comopnents: {
+    // eslint-disable-next-line prettier/prettier
     Navigation,
+    // eslint-disable-next-line prettier/prettier
   },
+  // eslint-disable-next-line prettier/prettier
 };
 </script>
 
