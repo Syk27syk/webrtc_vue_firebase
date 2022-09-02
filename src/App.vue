@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <Navigation :user="user" />
+    <Navigation :user="user" @logout="logout" />
     <!--
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
     -->
-    <router-view :user="user" />
+    <router-view :user="user" @logout="logout" />
   </div>
 </template>
 
@@ -30,11 +30,29 @@ export default {
       // eslint-disable-next-line
     };
   },
+  methods: {
+    logout: function () {
+      Firebase.auth()
+        .signOut()
+        .then(() => {
+          // eslint-disable-next-line
+          this.user = null;
+          // eslint-disable-next-line
+          this.$router.push("login");
+          // eslint-disable-next-line
+        });
+      // eslint-disable-next-line
+    },
+  },
   mounted() {
+    // eslint-disable-next-line
     Firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        // eslint-disable-next-line
         this.user = user;
+        // eslint-disable-next-line
       }
+      // eslint-disable-next-line
     });
     /*
     // eslint-disable-next-line
@@ -63,7 +81,7 @@ export default {
 <style lang="scss">
 $primary: #5f2882;
 // eslint-disable-next-line prettier/prettier
-@import "node_modules/bootstrap/scss/bootstrap";
+@import 'node_modules/bootstrap/scss/bootstrap';
 </style>
 
 <!--

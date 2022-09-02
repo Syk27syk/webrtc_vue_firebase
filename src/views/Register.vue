@@ -89,7 +89,9 @@ export default {
       email: null,
       passOne: null,
       passTwo: null,
+      // eslint-disable-next-line
       error: null,
+      // eslint-disable-next-line
     };
   },
   methods: {
@@ -97,29 +99,41 @@ export default {
       const info = {
         email: this.email,
         password: this.passTwo,
+        // eslint-disable-next-line
         displayName: this.displayName,
+        // eslint-disable-next-line
       };
       if (!this.error) {
+        // eslint-disable-next-line
         Firebase.auth().createUserWithEmailAndPassword(
           info.email,
           info.password
         );
+        // eslint-disable-next-line
         then(
+          // eslint-disable-next-line
           (userCredentials) => {
+            // eslint-disable-next-line
             return userCredentials.user
               .updateProfile({
+                // eslint-disable-next-line
                 displayName: info.displayName,
               })
               .then(() => {
                 // eslint-disable-next-line
                 this.$router.replace('/')
+                // eslint-disable-next-line
               });
           },
+          // eslint-disable-next-line
           (error) => {
+            // eslint-disable-next-line
             this.error = error.message;
           }
+          // eslint-disable-next-line
         );
       }
+      // eslint-disable-next-line
     },
   },
   watch: {
@@ -129,9 +143,13 @@ export default {
         // eslint-disable-next-line
         this.error = 'passwords must match'
       } else {
+        // eslint-disable-next-line
         this.error = null;
       }
+      // eslint-disable-next-line
     },
+    // eslint-disable-next-line
   },
+  // eslint-disable-next-line
 };
 </script>

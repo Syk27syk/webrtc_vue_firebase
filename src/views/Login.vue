@@ -76,11 +76,17 @@ export default {
             // eslint-disable-next-line
             this.$router.push("/");
           },
+          // eslint-disable-next-line
           (error) => {
+            // eslint-disable-next-line
             this.error = error.message;
           }
+          // eslint-disable-next-line
         );
+      // eslint-disable-next-line
     },
+    // eslint-disable-next-line
   },
+  // eslint-disable-next-line
 };
 </script>
