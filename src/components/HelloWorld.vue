@@ -1,3 +1,4 @@
+<!-- eslint-disable -->
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
@@ -5,7 +6,7 @@
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
+        >vue-cli·documentation</a
       >.
     </p>
     <h3>Installed CLI Plugins</h3>
@@ -47,7 +48,7 @@
       </li>
       <li>
         <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
-          >Community Chat</a
+          >Community·Chat</a
         >
       </li>
       <li>
@@ -71,8 +72,8 @@
       </li>
       <li>
         <a
-          href="https://github.com/vuejs/vue-devtools#vue-devtools"
-          target="_blank"
+          ·href="https://github.com/vuejs/vue-devtools#vue-devtools"
+          ·target="_blank"
           rel="noopener"
           >vue-devtools</a
         >
@@ -84,8 +85,8 @@
       </li>
       <li>
         <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
+          ·href="https://github.com/vuejs/awesome-vue"
+          ·target="_blank"
           rel="noopener"
           >awesome-vue</a
         >
@@ -99,8 +100,11 @@ export default {
   // eslint-disable-next-line prettier/prettier
   name: 'HelloWorld',
   props: {
+    // eslint-disable-next-line
     msg: String,
+    // eslint-disable-next-line
   },
+  // eslint-disable-next-line
 };
 </script>
 
