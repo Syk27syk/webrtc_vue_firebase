@@ -28,7 +28,9 @@ export default {
   // eslint-disable-next-line
   data: function() {
     return {
+      // eslint-disable-next-line
       user: null,
+      // eslint-disable-next-line
     };
   },
   mounted() {
@@ -36,9 +38,13 @@ export default {
     db.collection('users')
       // eslint-disable-next-line
       .doc('AHFJ4wUrnhgh5mpddw74')
+      // eslint-disable-next-line
       .get()
+      // eslint-disable-next-line
       .then((snapshot) => {
+        // eslint-disable-next-line
         this.user = snapshot.data().name;
+        // eslint-disable-next-line
       });
   },
   components: {
