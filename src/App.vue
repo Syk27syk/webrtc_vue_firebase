@@ -16,6 +16,8 @@
 import db from './db.js';
 // eslint-disable-next-line prettier/prettier
 import Navigation from '@/components/Navigation';
+// eslint-disable-next-line prettier/prettier
+import Firebase from 'firebase/compat/app';
 
 export default {
   // eslint-disable-next-line
@@ -29,6 +31,12 @@ export default {
     };
   },
   mounted() {
+    Firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.user = user;
+      }
+    });
+    /*
     // eslint-disable-next-line
     db.collection('users')
       // eslint-disable-next-line
@@ -41,6 +49,7 @@ export default {
         this.user = snapshot.data().name;
         // eslint-disable-next-line
       });
+    */
   },
   components: {
     // eslint-disable-next-line prettier/prettier

@@ -49,7 +49,7 @@
 
 <script>
 // eslint-disable-next-line
-import firebase from 'firebase/compat/app';
+import Firebase from 'firebase/compat/app';
 
 export default {
   data: function () {
@@ -69,7 +69,7 @@ export default {
         password: this.password,
         // eslint-disable-next-line
       };
-      firebase.auth()
+      Firebase.auth()
         .signInWithEmailAndPassword(info.email, info.password)
         .then(
           () => {

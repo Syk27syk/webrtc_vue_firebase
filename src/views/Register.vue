@@ -1,3 +1,4 @@
+<!-- eslint-disable -->
 <template>
   <div>
     <form class="mt-3" @submit.prevent="register">
@@ -79,7 +80,7 @@
 
 <script>
 // eslint-disable-next-line
-import firebase from 'firebase/compat/app';
+import Firebase from 'firebase/compat/app';
 
 export default {
   data: function () {
@@ -99,11 +100,14 @@ export default {
         displayName: this.displayName,
       };
       if (!this.error) {
-        firebase.auth()
-          .createUserWithEmailAndPassword(info.email, info.password);
+        Firebase.auth().createUserWithEmailAndPassword(
+          info.email,
+          info.password
+        );
         then(
           (userCredentials) => {
-            return userCredentials.user.updateProfile({
+            return userCredentials.user
+              .updateProfile({
                 displayName: info.displayName,
               })
               .then(() => {
