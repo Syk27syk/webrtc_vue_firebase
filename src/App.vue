@@ -1,21 +1,47 @@
 <template>
   <div id="app">
-    <Navigation />
+    <Navigation :user="user" />
     <!--
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
     -->
-    <router-view />
+    <router-view :user="user" />
   </div>
 </template>
 
 <script>
 // eslint-disable-next-line prettier/prettier
-import Navigation from '@/components/Navigation'
+import db from './db.js';
+// eslint-disable-next-line prettier/prettier
+import Navigation from '@/components/Navigation';
 
 export default {
+  // eslint-disable-next-line
+  name: 'App',
+  // eslint-disable-next-line
+  data: function() {
+    return {
+      // eslint-disable-next-line
+      user: null,
+      // eslint-disable-next-line
+    };
+  },
+  mounted() {
+    // eslint-disable-next-line
+    db.collection('users')
+      // eslint-disable-next-line
+      .doc('AHFJ4wUrnhgh5mpddw74')
+      // eslint-disable-next-line
+      .get()
+      // eslint-disable-next-line
+      .then((snapshot) => {
+        // eslint-disable-next-line
+        this.user = snapshot.data().name;
+        // eslint-disable-next-line
+      });
+  },
   components: {
     // eslint-disable-next-line prettier/prettier
     Navigation,
