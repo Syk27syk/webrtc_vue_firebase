@@ -14,8 +14,9 @@
 <script>
 // eslint-disable-next-line prettier/prettier
 import Navigation from '@/components/Navigation'
+
 export default {
-  comopnents: {
+  components: {
     // eslint-disable-next-line prettier/prettier
     Navigation,
     // eslint-disable-next-line prettier/prettier
@@ -27,7 +28,7 @@ export default {
 <style lang="scss">
 $primary: #5f2882;
 // eslint-disable-next-line prettier/prettier
-@import "node_modules/bootstrap/scss/bootstrap";
+@import 'node_modules/bootstrap/scss/bootstrap';
 </style>
 
 <!--
