@@ -19,8 +19,12 @@ const routes = [
     path: "/register",
     name: "Register",
     component: Register,
+  },
+  {
+    path: "/rooms",
+    name: "Rooms",
+    component: Rooms,
   }
-  
   /*
   {
     path: "/about",
